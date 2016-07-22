@@ -301,6 +301,10 @@ public class MarqueeTextView extends View {
         requestLayout();
     }
 
+    public CharSequence getText() {
+        return text;
+    }
+    
     public void setTextColor(int color) {
         textColor = color;
         renewPaint();

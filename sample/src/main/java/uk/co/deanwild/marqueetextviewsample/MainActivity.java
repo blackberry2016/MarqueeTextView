@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final MarqueeTextView tv = (MarqueeTextView) findViewById(R.id.tv1);
+        /*final MarqueeTextView tv = (MarqueeTextView) findViewById(R.id.tv1);
 
         Button buttonChangeColour = (Button) findViewById(R.id.button_change_colour);
         buttonChangeColour.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 tv.setEdgeEffectEnabled(!tv.isEdgeEffectEnabled());
             }
-        });
+        });*/
 
 
     }
