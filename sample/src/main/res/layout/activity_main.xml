@@ -17,8 +17,8 @@
         android:textColor="#fff"
         android:textSize="42sp"
         app:edgeEffectColor="@color/red"
-        app:pauseDuration="3000"
-        app:edgeEffectEnabled="true" />
+        app:edgeEffectEnabled="true"
+        app:pauseDuration="3000" />-->
 
 
     <TextView
@@ -36,35 +36,35 @@
         android:background="#999"
         android:orientation="horizontal">
 
-
+<!--
         <uk.co.deanwild.marqueetextview.MarqueeTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
 
-            android:text="Karting"
+            android:text="Karting is th ebest in the eworld"
             android:textColor="#fff"
 
             android:textSize="24sp"
             app:edgeEffectColor="#fff"
+            app:edgeEffectEnabled="true"
             app:edgeEffectWidth="20"
-            app:pauseDuration="3000"
-            app:edgeEffectEnabled="true" />
+            app:pauseDuration="3000" />-->
 
 
         <uk.co.deanwild.marqueetextview.MarqueeTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-
             android:text="Football"
             android:textColor="#fff"
-
             android:textSize="24sp"
+            android:layout_marginLeft="5dp"
+            app:centerText="false"
             app:edgeEffectColor="#fff"
+            app:edgeEffectEnabled="true"
             app:edgeEffectWidth="20"
-            app:pauseDuration="3000"
-            app:edgeEffectEnabled="true" />
+            app:pauseDuration="3000" />
 
 
     </LinearLayout>
@@ -96,31 +96,29 @@
             android:textSize="24sp" />
 
 
-    </LinearLayout>-->
+    </LinearLayout>
 
 
     <LinearLayout
-        android:layout_width="100px"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#009"
         android:orientation="horizontal">
 
-        <uk.co.deanwild.marqueetextview.MarqueeTextView
+      <!--  <uk.co.deanwild.marqueetextview.MarqueeTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:text="Football"
-            android:textColor="#fff"
+            android:textColor="#000"
 
             android:textSize="24sp"
-            app:edgeEffectColor="#fff"
+            app:edgeEffectColor="#000"
+            app:edgeEffectEnabled="true"
             app:edgeEffectWidth="20"
-            app:pauseDuration="3000"
-            app:edgeEffectEnabled="true" />
+            app:pauseDuration="3000" />-->
 
 
     </LinearLayout>
-
 
 
     <Button

@@ -41,6 +41,7 @@ public class MarqueeTextView extends View {
     boolean animationRunning = false;
     boolean paused = false;
     boolean wrapped = false;
+    boolean centerText = true; // only applies to "unwrapped" text
 
     TextPaint textPaint;
     Paint leftPaint;
@@ -96,7 +97,8 @@ public class MarqueeTextView extends View {
                 R.attr.edgeEffectWidth,
                 R.attr.edgeEffectColor,
                 R.attr.pauseDuration,
-                R.attr.forceMarquee
+                R.attr.forceMarquee,
+                R.attr.centerText,
         };
 
         TypedArray ta = getContext().obtainStyledAttributes(attrs, attrsArray);
@@ -110,6 +112,7 @@ public class MarqueeTextView extends View {
         edgeEffectColor = ta.getColor(6, edgeEffectColor);
         pauseDuration = ta.getInt(7, pauseDuration);
         forceMarquee = ta.getBoolean(8, forceMarquee);
+        centerText = ta.getBoolean(9, centerText);
 
         ta.recycle();
     }
@@ -128,7 +131,12 @@ public class MarqueeTextView extends View {
 
                 animationRunning = false;
 
-                float leftMargin = (viewWidth - textWidth) / 2;
+                float leftMargin = 0;
+
+                if(centerText){
+                    leftMargin = (viewWidth - textWidth) / 2;
+                }
+
                 canvas.drawText(text.toString(), leftMargin, topOffset, textPaint);
 
             } else { // not enough room, we must animate it
