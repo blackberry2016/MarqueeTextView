@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.text.TextPaint;
 import android.util.AttributeSet;
@@ -54,6 +55,8 @@ public class MarqueeTextView extends View {
 
     int topOffset;
     int xOffset;
+
+    Typeface customTypeface;
 
     public static void setGlobalDefaultPauseDuration(int pauseDuration) {
         DEFAULT_PAUSE_DURATION = pauseDuration;
@@ -133,7 +136,7 @@ public class MarqueeTextView extends View {
 
                 float leftMargin = 0;
 
-                if(centerText){
+                if (centerText) {
                     leftMargin = (viewWidth - textWidth) / 2;
                 }
 
@@ -244,6 +247,10 @@ public class MarqueeTextView extends View {
             paint.density = getResources().getDisplayMetrics().density;
             paint.setTextSize(textSize);
 
+            if (customTypeface != null) {
+                paint.setTypeface(customTypeface);
+            }
+
             height = (int) (Math.abs(paint.ascent()) + Math.abs(paint.descent()));
         }
 
@@ -257,6 +264,10 @@ public class MarqueeTextView extends View {
         textPaint.density = getResources().getDisplayMetrics().density;
         textPaint.setTextSize(textSize);
         textPaint.setColor(textColor);
+
+        if (customTypeface != null) {
+            textPaint.setTypeface(customTypeface);
+        }
 
         int absEdgeEffectWidth = (getMeasuredWidth() / 100) * edgeEffectWidth;
 
@@ -312,7 +323,7 @@ public class MarqueeTextView extends View {
     public CharSequence getText() {
         return text;
     }
-    
+
     public void setTextColor(int color) {
         textColor = color;
         renewPaint();
@@ -349,6 +360,10 @@ public class MarqueeTextView extends View {
 
         if (paused)
             invalidate();
+    }
+
+    public void setCustomTypeface(Typeface customTypeface) {
+        this.customTypeface = customTypeface;
     }
 
 }
